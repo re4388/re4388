@@ -7,4 +7,3 @@
       </ul>
 <p>😃 <a href="https://nervous-bassi-0a6d60.netlify.app/#/">More My GitHub History</a></p>
 <p>🙌Inspired by <a href="https://github.com/Mokkapps">Mokkapps (Michael Hoffmann)</a> &amp; <a href="https://simonwillison.net/2020/Jul/10/self-updating-profile-readme/">Building a self-updating profile README for GitHub</a></p>
-2
