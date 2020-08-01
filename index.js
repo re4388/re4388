@@ -11,6 +11,7 @@ let {
 const emoji = require('markdown-it-emoji');
 const fs = require("fs");
 const {log} = require("console");
+require('dotenv').config()
 
 
 const websiteUrl = "https://nervous-bassi-0a6d60.netlify.app/#/";
@@ -47,7 +48,6 @@ md.use(emoji);
 
 
   /* covert md to html */
-  console.log('dd', text)
   const result = md.render(text);
 
   /* overwrite README.md */
@@ -60,14 +60,11 @@ md.use(emoji);
 
 
 
-
 async function loadLatestRepo() {
-
-
-
+  const TOKEN = process.env.ACCESS_TOKEN
   graphql = graphql.defaults({
     headers: {
-      authorization: `token 799c0d68d9bbe9a1b3a2ceec12d6a8fb115e6939`,
+      authorization: `token ${TOKEN}`,
     },
   });
 

@@ -23,7 +23,11 @@ jobs:
       run: |
         npm ci
     - name: Update README
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: |-
+        touch .env
+        echo ACCESS_TOKEN =${{ secrets.ACCESS_TOKEN }} >> .env
         npm start
         cat README.md
     - name: Commit and push if changed
