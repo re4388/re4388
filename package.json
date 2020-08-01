@@ -1,0 +1,19 @@
+{
+  "name": "github_auto-update_profile",
+  "version": "0.0.1",
+  "description": "auto update profile",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@octokit/graphql": "^4.5.3",
+    "markdown-it": "^11.0.0",
+    "markdown-it-emoji": "^1.4.0",
+    "rss-parser": "^3.9.0"
+  }
+}
