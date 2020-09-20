@@ -14,7 +14,7 @@ const {log} = require("console");
 require('dotenv').config()
 
 
-const websiteUrl = "https://nervous-bassi-0a6d60.netlify.app/#/";
+const websiteUrl = "https://ben-notes.vercel.app/#/repos";
 const twitterUrl = "https://twitter.com/re4388";
 const linkedInUrl = "https://www.linkedin.com/in/pinweihu/";
 const mediumUrl = "https://medium.com/@hupinwei";
