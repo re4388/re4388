@@ -22,22 +22,16 @@ const DevTo_Badge = `[<img src="https://img.shields.io/badge/DEV.TO-%230A0A0A.sv
 
 md.use(emoji);
 
-/**
- * The only reason to keep this async un-remove is cuz I may want to
- * add await fn inside maybe sooner?!
- */
-(async () => {
-  let text = `👋 Hi, I am Ben Hu, a coder have passion :).
+let text = `👋 Hi, I am Ben Hu, a coder have passion :).
     \n\n${Twitter_Badge} ${LinkedIn_Badge}${Medium_Badge} ${DevTo_Badge}
     \n\n ❤ [Check out my website](${Website_Url})
     \n\n ❤ Today I learned
     \n\n
     `;
 
-  const result = md.render(text + genTIL());
+const result = md.render(text + genTIL());
 
-  fs.writeFile('README.md', result, function (err) {
-    if (err) return console.log(err);
-    console.log(`${result} > README.md`);
-  });
-})();
+fs.writeFile('README.md', result, function (err) {
+  if (err) return console.log(err);
+  console.log(`${result} > README.md`);
+});
