@@ -44,7 +44,7 @@ md.use(emoji);
   // `;
 
   /* assemble the content ver 2*/
-  text = `👋 Hi, I am Ben Hu, currently working on [MuenAI](https://www.muenai.com/).
+  text = `👋 Hi, I am Ben Hu, a coder have passion :).
     \n\n${twitterBadge} ${linkedInBadge}${mediumBadge} ${devToBadge}
     \n\n ❤ [Check out my website](${websiteUrl})
     `;
