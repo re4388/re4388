@@ -27,59 +27,15 @@ md.use(emoji);
  * add await fn inside maybe sooner?!
  */
 (async () => {
-  /* assemble the content ver 2*/
   let text = `👋 Hi, I am Ben Hu, a coder have passion :).
     \n\n${Twitter_Badge} ${LinkedIn_Badge}${Medium_Badge} ${DevTo_Badge}
     \n\n ❤ [Check out my website](${Website_Url})
     \n\n ❤ Today I learned
     \n\n
-
     `;
 
-  // add();
-  // const tilFolderPath = './til';
-  // const folders: string[] = fs.readdirSync(tilFolderPath);
-  // console.log('topics :', folders);
-
-  // let tilSummary: Til = {};
-
-  // for (const folder of folders) {
-  //   const titles: string[] = [];
-  //   const folderPath = `./til/${folder}/`;
-  //   fs.readdirSync(folderPath).map((fileName: string) => {
-  //     titles.push(getFileNameWithoutExt(fileName));
-  //   });
-  //   tilSummary[folder] = titles;
-  // }
-
-  // // console.log('tempObj :', tilSummary);
-
-  // function getFileNameWithoutExt(fileName: string) {
-  //   return path.basename(fileName, path.extname(fileName));
-  // }
-
-  // // let text: string = '';
-
-  // for (const [key, values] of Object.entries(tilSummary)) {
-  //   text += `\n\n ## ${key}\n`;
-
-  //   for (const title of values) {
-  //     text += `- [${title}](https://github.com/re4388/til/blob/master/${whiteSpaceAdder(
-  //       key
-  //     )}/${whiteSpaceAdder(title)}).md\n`;
-  //   }
-  // }
-
-  // console.log(text);
-
-  // function whiteSpaceAdder(text: string) {
-  //   return text.replace(/ /g, '%20');
-  // }
-
-  /* covert md to html */
   const result = md.render(text + genTIL());
 
-  /* overwrite README.md */
   fs.writeFile('README.md', result, function (err) {
     if (err) return console.log(err);
     console.log(`${result} > README.md`);
