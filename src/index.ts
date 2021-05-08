@@ -25,7 +25,7 @@ md.use(emoji);
 let text = `👋 Hi, I am Ben Hu, a coder have passion :).
     \n\n${Twitter_Badge} ${LinkedIn_Badge}${Medium_Badge} ${DevTo_Badge}
     \n\n ❤ [Check out my website](${Website_Url})
-    \n\n ❤ Today I learned
+    \n\n # Today I learned
     \n\n
     `;
 
