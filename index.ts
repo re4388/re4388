@@ -4,7 +4,10 @@ const md = require('markdown-it')({
   linkify: true, // Autoconvert URL-like text to links
 });
 
+type Til = { [folder: string]: string[] };
+
 import * as fs from 'fs';
+import * as path from 'path';
 const emoji = require('markdown-it-emoji');
 require('dotenv').config();
 
@@ -36,10 +39,49 @@ md.use(emoji);
   let text = `👋 Hi, I am Ben Hu, a coder have passion :).
     \n\n${twitterBadge} ${linkedInBadge}${mediumBadge} ${devToBadge}
     \n\n ❤ [Check out my website](${websiteUrl})
-    \n\n ❤ Today I learned:
+    \n\n ❤ Today I learned
     \n\n
 
     `;
+
+  const tilFolderPath = './til';
+  const folders: string[] = fs.readdirSync(tilFolderPath);
+  console.log('topics :', folders);
+
+  let tilSummary: Til = {};
+
+  for (const folder of folders) {
+    const titles: string[] = [];
+    const folderPath = `./til/${folder}/`;
+    fs.readdirSync(folderPath).map((fileName: string) => {
+      titles.push(getFileNameWithoutExt(fileName));
+    });
+    tilSummary[folder] = titles;
+  }
+
+  // console.log('tempObj :', tilSummary);
+
+  function getFileNameWithoutExt(fileName: string) {
+    return path.basename(fileName, path.extname(fileName));
+  }
+
+  // let text: string = '';
+
+  for (const [key, values] of Object.entries(tilSummary)) {
+    text += `\n\n ## ${key}\n`;
+
+    for (const title of values) {
+      text += `- [${title}](https://github.com/re4388/til/blob/master/${whiteSpaceAdder(
+        key
+      )}/${whiteSpaceAdder(title)})\n`;
+    }
+  }
+
+  console.log(text);
+
+  function whiteSpaceAdder(text: string) {
+    return text.replace(/ /g, '%20');
+  }
 
   /* covert md to html */
   const result = md.render(text);
