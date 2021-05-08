@@ -4,24 +4,24 @@
 <h1>Today I learned</h1>
 <h2>Learning to Learn</h2>
 <ul>
-<li><a href="https://github.com/re4388/til/blob/master/Learning%20to%20Learn/What%20use%20of%20mind%20map.md">What use of mind map</a></li>
-<li><a href="https://github.com/re4388/til/blob/master/Learning%20to%20Learn/What's%20different%20between%20studing%20Science%20Subject%20and%20Liberal%20Art%20Subject.md">What's different between studing Science Subject and Liberal Art Subject</a></li>
+<li><a href="https://github.com/re4388/re4388/blob/master/til/Learning%20to%20Learn/What%20use%20of%20mind%20map.md">What use of mind map</a></li>
+<li><a href="https://github.com/re4388/re4388/blob/master/til/Learning%20to%20Learn/What's%20different%20between%20studing%20Science%20Subject%20and%20Liberal%20Art%20Subject.md">What's different between studing Science Subject and Liberal Art Subject</a></li>
 </ul>
 <h2>Clean Code</h2>
 <ul>
-<li><a href="https://github.com/re4388/til/blob/master/Clean%20Code/When%20do%20I%20NOT%20build%20my%20own%20data%20structure.md">When do I NOT build my own data structure</a></li>
+<li><a href="https://github.com/re4388/re4388/blob/master/til/Clean%20Code/When%20do%20I%20NOT%20build%20my%20own%20data%20structure.md">When do I NOT build my own data structure</a></li>
 </ul>
 <h2>Front End</h2>
 <ul>
-<li><a href="https://github.com/re4388/til/blob/master/Front%20End/esbuild.md">esbuild</a></li>
-<li><a href="https://github.com/re4388/til/blob/master/Front%20End/state-mgmt-note.md">state-mgmt-note</a></li>
-<li><a href="https://github.com/re4388/til/blob/master/Front%20End/Webpack%20vs%20Vite.md">Webpack vs Vite</a></li>
+<li><a href="https://github.com/re4388/re4388/blob/master/til/Front%20End/esbuild.md">esbuild</a></li>
+<li><a href="https://github.com/re4388/re4388/blob/master/til/Front%20End/state-mgmt-note.md">state-mgmt-note</a></li>
+<li><a href="https://github.com/re4388/re4388/blob/master/til/Front%20End/Webpack%20vs%20Vite.md">Webpack vs Vite</a></li>
 </ul>
 <h2>Jest</h2>
 <ul>
-<li><a href="https://github.com/re4388/til/blob/master/Jest/performace%20API%20got%20called%20dueing%20jest%20debug.md">performace API got called dueing jest debug</a></li>
+<li><a href="https://github.com/re4388/re4388/blob/master/til/Jest/performace%20API%20got%20called%20dueing%20jest%20debug.md">performace API got called dueing jest debug</a></li>
 </ul>
 <h2>TS</h2>
 <ul>
-<li><a href="https://github.com/re4388/til/blob/master/TS/use%20index%20signature%20shall%20be%20careful%20.md">use index signature shall be careful </a></li>
+<li><a href="https://github.com/re4388/re4388/blob/master/til/TS/use%20index%20signature%20shall%20be%20careful%20.md">use index signature shall be careful </a></li>
 </ul>

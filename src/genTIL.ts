@@ -2,6 +2,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { Til } from './type';
 
+const Path_to_Til_article = 'https://github.com/re4388/re4388/blob/master/til';
+
 export function genTIL(): string {
   const tilFolderPath = './til';
   const folders: string[] = fs.readdirSync(tilFolderPath);
@@ -22,7 +24,7 @@ export function genTIL(): string {
     text += `\n\n ## ${key}\n`;
 
     for (const title of values) {
-      text += `- [${title}](https://github.com/re4388/til/blob/master/${whiteSpaceAdder(
+      text += `- [${title}](${Path_to_Til_article}/${whiteSpaceAdder(
         key
       )}/${whiteSpaceAdder(title)}.md)\n`;
     }
