@@ -4,7 +4,8 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    - cron: '32 * * * *'
+    # https://crontab.guru/#0_2_*_*_*
+    - cron: '0 2 * * *'
 
 jobs:
   build:
