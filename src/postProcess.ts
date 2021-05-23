@@ -1,5 +1,3 @@
-import { genTILData } from './genTIL';
-
 const { Client } = require('@notionhq/client');
 require('dotenv').config();
 
@@ -12,24 +10,28 @@ type Article = {
     auth: process.env.NOTION_TOKEN,
   });
 
-  const data = await notion.databases.query({
-    database_id: '2e9b31c52cba498f8544649a804cce95',
-  });
+  try {
+    const data = await notion.databases.query({
+      database_id: '2e9b31c52cba498f8544649a804cce95',
+    });
 
-  const ArticleInNotion = data.results.map(
-    (article: Article) => article.properties.Name.title[0].text.content
-  );
-  console.log('ArticleInNotion: ', ArticleInNotion);
+    const ArticleInNotion = data.results.map(
+      (article: Article) => article.properties.Name.title[0].text.content
+    );
+    console.log('ArticleInNotion: ', ArticleInNotion);
+  } catch (error) {
+    console.log(error);
+  }
 
-  const TilFolderPath = './til';
-  const articleInGitHub = genTILData(TilFolderPath).articleTitleList;
-  console.log('articleInGitHub: ', articleInGitHub);
+  // const TilFolderPath = './til';
+  // const articleInGitHub = genTILData(TilFolderPath).articleTitleList;
+  // console.log('articleInGitHub: ', articleInGitHub);
 
-  let gitHubArticleSet = new Set(articleInGitHub);
-  let ArticleInNotionSet = new Set(ArticleInNotion);
-  let articleToUpdateToNotion = new Set(
-    [...gitHubArticleSet].filter((x) => !ArticleInNotionSet.has(x))
-  );
+  // let gitHubArticleSet = new Set(articleInGitHub);
+  // let ArticleInNotionSet = new Set(ArticleInNotion);
+  // let articleToUpdateToNotion = new Set(
+  //   [...gitHubArticleSet].filter((x) => !ArticleInNotionSet.has(x))
+  // );
 
-  console.log('articleToUpdateToNotion:', articleToUpdateToNotion);
+  // console.log('articleToUpdateToNotion:', articleToUpdateToNotion);
 })();
