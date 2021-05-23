@@ -4,7 +4,7 @@ import { getFileNameWithoutExt, whiteSpaceAdder } from './utils';
 
 const pathToTil = 'https://github.com/re4388/re4388/blob/master/til';
 
-export function genTILData(tilFolderPath: string) {
+export function genTILData(tilFolderPath: string = './til') {
   const folders: string[] = fs.readdirSync(tilFolderPath);
 
   let tilSummary: Til = {};

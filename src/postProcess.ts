@@ -1,3 +1,5 @@
+import { genTILData } from './genTIL';
+
 const { Client } = require('@notionhq/client');
 require('dotenv').config();
 
@@ -19,19 +21,17 @@ type Article = {
       (article: Article) => article.properties.Name.title[0].text.content
     );
     console.log('ArticleInNotion: ', ArticleInNotion);
+    const articleInGitHub = genTILData().articleTitleList;
+    console.log('articleInGitHub: ', articleInGitHub);
+
+    let gitHubArticleSet = new Set(articleInGitHub);
+    let ArticleInNotionSet = new Set(ArticleInNotion);
+    let articleToUpdateToNotion = new Set(
+      [...gitHubArticleSet].filter((x) => !ArticleInNotionSet.has(x))
+    );
+
+    console.log('articleToUpdateToNotion:', articleToUpdateToNotion);
   } catch (error) {
     console.log(error);
   }
-
-  // const TilFolderPath = './til';
-  // const articleInGitHub = genTILData(TilFolderPath).articleTitleList;
-  // console.log('articleInGitHub: ', articleInGitHub);
-
-  // let gitHubArticleSet = new Set(articleInGitHub);
-  // let ArticleInNotionSet = new Set(ArticleInNotion);
-  // let articleToUpdateToNotion = new Set(
-  //   [...gitHubArticleSet].filter((x) => !ArticleInNotionSet.has(x))
-  // );
-
-  // console.log('articleToUpdateToNotion:', articleToUpdateToNotion);
 })();

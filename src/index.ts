@@ -29,8 +29,7 @@ let welcomeMessage = `👋 Hi, I am Ben Hu, a coder have passion :).
     \n\n
     `;
 
-const TilFolderPath = './til';
-const TilInMd = genTILData(TilFolderPath).allTitleAndUrlInMd;
+const TilInMd = genTILData().allTitleAndUrlInMd;
 const result = md.render(welcomeMessage + TilInMd);
 
 fs.writeFile('README.md', result, function (err) {
