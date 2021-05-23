@@ -39,4 +39,5 @@ jobs:
           git commit -m "Updated README" -a || echo "No changes to commit"
           git push
       - name: Post Process
+        run: |-
           ts-node src/postProcess.ts
