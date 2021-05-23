@@ -4,7 +4,7 @@ import { getFileNameWithoutExt, whiteSpaceAdder } from './utils';
 
 const pathToTil = 'https://github.com/re4388/re4388/blob/master/til';
 
-export function genTIL(tilFolderPath: string) {
+export function genTILData(tilFolderPath: string) {
   const folders: string[] = fs.readdirSync(tilFolderPath);
 
   let tilSummary: Til = {};
@@ -17,11 +17,11 @@ export function genTIL(tilFolderPath: string) {
     tilSummary[folder] = titles;
   }
 
-  let text: string = '';
-  const titleList = [];
+  let allTitleAndUrlInMd: string = '';
+  const articleTitleList = [];
   const PathToArticleList = [];
   for (const [key, values] of Object.entries(tilSummary)) {
-    text += `\n\n ## ${key}\n`;
+    allTitleAndUrlInMd += `\n\n ## ${key}\n`;
 
     for (const title of values) {
       const pathToMd = `${pathToTil}/${whiteSpaceAdder(key)}/${whiteSpaceAdder(
@@ -29,13 +29,13 @@ export function genTIL(tilFolderPath: string) {
       )}.md`;
 
       // push to article list
-      titleList.push(title);
+      articleTitleList.push(title);
       // push to article path list
       PathToArticleList.push(pathToMd);
       // construct md format
-      text += `- [${title}](${pathToMd})\n`;
+      allTitleAndUrlInMd += `- [${title}](${pathToMd})\n`;
     }
   }
 
-  return { text, titleList, PathToArticleList };
+  return { allTitleAndUrlInMd, articleTitleList, PathToArticleList };
 }

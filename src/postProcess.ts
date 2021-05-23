@@ -1,4 +1,4 @@
-import { genTIL } from './genTIL';
+import { genTILData } from './genTIL';
 
 const { Client } = require('@notionhq/client');
 require('dotenv').config();
@@ -22,7 +22,7 @@ type Article = {
   console.log('ArticleInNotion: ', ArticleInNotion);
 
   const TilFolderPath = './til';
-  const articleInGitHub = genTIL(TilFolderPath).titleList;
+  const articleInGitHub = genTILData(TilFolderPath).articleTitleList;
   console.log('articleInGitHub: ', articleInGitHub);
 
   let gitHubArticleSet = new Set(articleInGitHub);

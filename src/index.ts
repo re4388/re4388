@@ -5,7 +5,7 @@ const md = require('markdown-it')({
 });
 
 import * as fs from 'fs';
-import { genTIL } from './genTIL';
+import { genTILData } from './genTIL';
 const emoji = require('markdown-it-emoji');
 require('dotenv').config();
 
@@ -22,7 +22,7 @@ const DevToBadge = `[<img src="https://img.shields.io/badge/DEV.TO-%230A0A0A.svg
 
 md.use(emoji);
 
-let text = `👋 Hi, I am Ben Hu, a coder have passion :).
+let welcomeMessage = `👋 Hi, I am Ben Hu, a coder have passion :).
     \n\n${TwitterBadge} ${linkedInBadge}${MediumBadge} ${DevToBadge}
     \n\n ❤ [Check out my website](${WebsiteUrl})
     \n\n # Today I learned
@@ -30,8 +30,8 @@ let text = `👋 Hi, I am Ben Hu, a coder have passion :).
     `;
 
 const TilFolderPath = './til';
-const tilData = genTIL(TilFolderPath).text;
-const result = md.render(text + tilData);
+const TilInMd = genTILData(TilFolderPath).allTitleAndUrlInMd;
+const result = md.render(welcomeMessage + TilInMd);
 
 fs.writeFile('README.md', result, function (err) {
   if (err) return console.log(err);

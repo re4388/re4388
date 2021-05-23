@@ -1,8 +1,8 @@
-import { genTIL } from './genTIL';
+import { genTILData } from './genTIL';
 
 test('genTIL output key substring', () => {
   const folder: string = './test/mockFolder/';
-  const result: string = genTIL(folder).text;
+  const result: string = genTILData(folder).allTitleAndUrlInMd;
   expect(result).toContain('TS');
   expect(result).toContain('JS');
   expect(result).toContain('ts-a1');
