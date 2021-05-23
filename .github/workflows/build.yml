@@ -40,4 +40,4 @@ jobs:
           git push
       - name: Post Process
         run: |-
-          ts-node src/postProcess.ts
+          npm postProcess
