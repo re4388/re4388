@@ -23,7 +23,8 @@ type Article = {
     console.log('ArticleInNotion: ', ArticleInNotion);
     const articleInGitHub = genTILData().articleTitleList;
     const articleInGitHubPath = genTILData().PathToArticleList;
-    const tags = genTILData().folders;
+    const tags = genTILData().tags;
+
     console.log('articleInGitHub: ', articleInGitHub);
     console.log('articleInGitHubPath: ', articleInGitHubPath);
     console.log('tags: ', tags);

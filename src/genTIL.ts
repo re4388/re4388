@@ -20,14 +20,17 @@ export function genTILData(tilFolderPath: string = './til') {
   let allTitleAndUrlInMd: string = '';
   const articleTitleList = [];
   const PathToArticleList = [];
-  for (const [key, values] of Object.entries(tilSummary)) {
-    allTitleAndUrlInMd += `\n\n ## ${key}\n`;
+  const tags = [];
+  for (const [folder, values] of Object.entries(tilSummary)) {
+    allTitleAndUrlInMd += `\n\n ## ${folder}\n`;
 
     for (const title of values) {
-      const pathToMd = `${pathToTil}/${whiteSpaceAdder(key)}/${whiteSpaceAdder(
-        title
-      )}.md`;
+      const pathToMd = `${pathToTil}/${whiteSpaceAdder(
+        folder
+      )}/${whiteSpaceAdder(title)}.md`;
 
+      // push folder (tags in notion)
+      tags.push(folder);
       // push to article list
       articleTitleList.push(title);
       // push to article path list
@@ -37,5 +40,5 @@ export function genTILData(tilFolderPath: string = './til') {
     }
   }
 
-  return { allTitleAndUrlInMd, articleTitleList, PathToArticleList, folders };
+  return { allTitleAndUrlInMd, articleTitleList, PathToArticleList, tags };
 }
