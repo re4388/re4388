@@ -37,5 +37,5 @@ export function genTILData(tilFolderPath: string = './til') {
     }
   }
 
-  return { allTitleAndUrlInMd, articleTitleList, PathToArticleList };
+  return { allTitleAndUrlInMd, articleTitleList, PathToArticleList, folders };
 }
