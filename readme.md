@@ -13,6 +13,12 @@
 <li><a href="https://github.com/re4388/re4388/blob/master/til/Front%20End/esbuild.md">esbuild</a></li>
 <li><a href="https://github.com/re4388/re4388/blob/master/til/Front%20End/state-mgmt-note.md">state-mgmt-note</a></li>
 </ul>
+<h2>JS</h2>
+<ul>
+<li><a href="https://github.com/re4388/re4388/blob/master/til/JS/Using%20generators%20to%20create%20sequential%20IDs.md">Using generators to create sequential IDs</a></li>
+<li><a href="https://github.com/re4388/re4388/blob/master/til/JS/What%20it%20means%20when%20I%20see%20%60...arr%60%20in%20function%20parameter.md">What it means when I see <code>...arr</code> in function parameter</a></li>
+<li><a href="https://github.com/re4388/re4388/blob/master/til/JS/object%20destructuring.md">object destructuring</a></li>
+</ul>
 <h2>Jest</h2>
 <ul>
 <li><a href="https://github.com/re4388/re4388/blob/master/til/Jest/performace%20API%20got%20called%20dueing%20jest%20debug.md">performace API got called dueing jest debug</a></li>
@@ -28,6 +34,7 @@
 </ul>
 <h2>TS</h2>
 <ul>
+<li><a href="https://github.com/re4388/re4388/blob/master/til/TS/What%20is%20%60importHelpers%60%20tag%20in%20tsconfig.md">What is <code>importHelpers</code> tag in tsconfig</a></li>
 <li><a href="https://github.com/re4388/re4388/blob/master/til/TS/use%20index%20signature%20shall%20be%20careful%20.md">use index signature shall be careful </a></li>
 </ul>
 <h2>learning to learn</h2>
