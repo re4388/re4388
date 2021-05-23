@@ -1,21 +1,35 @@
+import { genTIL } from './genTIL';
+
 const { Client } = require('@notionhq/client');
-
 require('dotenv').config();
-const NOTION_TOKEN = process.env.NOTION_TOKEN;
-const database_id = '2e9b31c52cba498f8544649a804cce95';
-const notion = new Client({
-  auth: NOTION_TOKEN,
-});
 
-export async function runNotionApiGet() {
-  const myPage = await notion.databases.query({
-    database_id: database_id,
-    filter: {
-      property: 'Name',
-      text: {
-        contains: 'react',
-      },
-    },
+type Article = {
+  properties: { Name: { title: { text: { content: any } }[] } };
+};
+
+(async function runNotionApiGet() {
+  const notion = new Client({
+    auth: process.env.NOTION_TOKEN,
   });
-  console.log('TIL', JSON.stringify(myPage));
-}
+
+  const data = await notion.databases.query({
+    database_id: '2e9b31c52cba498f8544649a804cce95',
+  });
+
+  const ArticleInNotion = data.results.map(
+    (article: Article) => article.properties.Name.title[0].text.content
+  );
+  console.log('ArticleInNotion: ', ArticleInNotion);
+
+  const TilFolderPath = './til';
+  const articleInGitHub = genTIL(TilFolderPath).titleList;
+  console.log('articleInGitHub: ', articleInGitHub);
+
+  let gitHubArticleSet = new Set(articleInGitHub);
+  let ArticleInNotionSet = new Set(ArticleInNotion);
+  let articleToUpdateToNotion = new Set(
+    [...gitHubArticleSet].filter((x) => !ArticleInNotionSet.has(x))
+  );
+
+  console.log('articleToUpdateToNotion:', articleToUpdateToNotion);
+})();

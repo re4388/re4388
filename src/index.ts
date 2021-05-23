@@ -31,8 +31,6 @@ let text = `👋 Hi, I am Ben Hu, a coder have passion :).
 
 const TilFolderPath = './til';
 const tilData = genTIL(TilFolderPath).text;
-console.log(genTIL(TilFolderPath).titleList);
-console.log(genTIL(TilFolderPath).PathToArticleList);
 const result = md.render(text + tilData);
 
 fs.writeFile('README.md', result, function (err) {
