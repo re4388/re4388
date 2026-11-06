@@ -3,6 +3,6 @@
 
 
 my app
-https://emberwick.benhu.dpdns.org/
-https://anki.benhu.dpdns.org/
+- https://emberwick.benhu.dpdns.org/
+- https://anki.benhu.dpdns.org/
 
